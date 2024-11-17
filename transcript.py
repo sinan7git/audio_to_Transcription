@@ -25,7 +25,7 @@ def audio_to_base64(file):
 # Function to re-encode audio file to opus (ogg) format
 def reencode_audio_to_ogg(input_file, output_file="encoded_audio.ogg"):
     command = [
-        "C:\\Users\\sinan\\ffmpeg-2024-11-13-git-322b240cea-essentials_build\\bin\\ffmpeg", "-y",  # Add the '-y' flag to overwrite without asking
+        "ffmpeg", "-y",  # Add the '-y' flag to overwrite without asking
         "-i", input_file, "-vn", "-map_metadata", "-1", 
         "-ac", "1", "-c:a", "libopus", "-b:a", "12k", "-application", "voip", output_file
     ]
